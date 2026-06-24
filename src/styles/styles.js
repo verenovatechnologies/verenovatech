@@ -1,0 +1,155 @@
+import { C } from "./tokens.js";
+
+export const st = {
+  page: {
+    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    background: C.bg,
+    color: C.text,
+    overflowX: "hidden",
+  },
+
+  /* nav */
+  nav: { position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, transition: "all .3s ease", background: C.navBg, borderBottom: `1px solid ${C.navBorder}` },
+  navInner: { maxWidth: 1240, margin: "0 auto", padding: "14px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" },
+  navLogo: { display: "flex", alignItems: "center", gap: 10, textDecoration: "none" },
+  logoIcon: { width: 38, height: 38, borderRadius: "50%", background: `linear-gradient(135deg, ${C.blue500}, ${C.blue600})`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "#fff", fontSize: 14 },
+  logoText: { fontWeight: 700, fontSize: 18, color: "#111827", letterSpacing: "-0.02em" },
+  navLinksWrap: { display: "flex", gap: 6, alignItems: "center" },
+  navLink: { position: "relative", textDecoration: "none", fontSize: 14.5, fontWeight: 500, transition: "color .2s, background .2s", padding: "8px 16px", borderRadius: 20 },
+  navDotUnder: { display: "none" },
+  hamburger: { display: "none", flexDirection: "column", gap: 5, background: "none", border: "none", cursor: "pointer", padding: 8 },
+  hamLine: { width: 22, height: 2, background: "#111827", borderRadius: 2 },
+  mobileMenu: { position: "fixed", top: 0, right: 0, height: "100vh", width: "78%", maxWidth: 320, background: "#ffffff", zIndex: 60, display: "flex", flexDirection: "column", padding: "28px 28px", gap: 22, transition: "transform .35s cubic-bezier(.16,1,.3,1)", boxShadow: "-10px 0 40px rgba(0,0,0,0.15)" },
+  mobileClose: { alignSelf: "flex-end", background: "none", border: "none", color: "#111827", fontSize: 22, cursor: "pointer", marginBottom: 10 },
+  mobileLink: { color: "#374151", textDecoration: "none", fontSize: 18, fontWeight: 600, borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: 14 },
+  mobileOverlay: { position: "fixed", inset: 0, background: "rgba(0,0,0,0.4)", zIndex: 55 },
+
+  /* hero */
+  hero: { position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" },
+  heroBgLayer: { position: "absolute", inset: 0, zIndex: 0 },
+  heroBgSlide: { position: "absolute", inset: 0, transition: "opacity 1.2s ease" },
+  heroNoise: { position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 100%, rgba(0,0,0,0.5), transparent 60%)" },
+  heroContent: { position: "relative", zIndex: 2, maxWidth: 760, padding: "140px 24px 120px", margin: "0 auto" },
+  slideEyebrow: { display: "inline-flex", alignItems: "center", gap: 8, fontSize: 12.5, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "#e9d5ff", marginBottom: 22, padding: "8px 16px", borderRadius: 999, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.18)" },
+  eyebrowDot: { width: 7, height: 7, borderRadius: "50%", background: C.blue400, display: "inline-block" },
+  slideHeading: { fontSize: "clamp(2.4rem, 6vw, 4.2rem)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.02em", margin: "0 0 22px", color: "#fff" },
+  slideDesc: { fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,0.78)", maxWidth: 560, margin: "0 0 36px" },
+  slideActions: { display: "flex", gap: 16, flexWrap: "wrap" },
+
+  btnPrimary: { display: "inline-flex", alignItems: "center", padding: "14px 26px", background: C.blue500, color: "#fff", borderRadius: 999, textDecoration: "none", fontWeight: 600, fontSize: 15, transition: "background .2s, transform .2s", boxShadow: "0 10px 30px rgba(124,58,237,0.35)" },
+  btnOutlineWhite: { display: "inline-flex", alignItems: "center", padding: "14px 26px", border: "1.5px solid rgba(255,255,255,0.3)", color: "#fff", borderRadius: 999, textDecoration: "none", fontWeight: 600, fontSize: 15, transition: "border-color .2s, background .2s" },
+  btnWhite: { display: "inline-flex", alignItems: "center", padding: "14px 26px", background: "#fff", color: C.blue600, borderRadius: 999, textDecoration: "none", fontWeight: 700, fontSize: 15 },
+
+  sliderArrow: { position: "absolute", top: "50%", transform: "translateY(-50%)", zIndex: 3, width: 46, height: 46, borderRadius: "50%", border: "1px solid rgba(255,255,255,0.2)", background: "rgba(255,255,255,0.06)", color: "#fff", fontSize: 18, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)" },
+  sliderDots: { position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 8, zIndex: 3 },
+  dot: { height: 9, borderRadius: 5, border: "none", cursor: "pointer", transition: "all .3s ease" },
+  slideCounter: { position: "absolute", bottom: 38, right: 28, zIndex: 3, fontSize: 13, color: "rgba(255,255,255,0.6)", fontFamily: "monospace" },
+  progressTrack: { position: "absolute", bottom: 0, left: 0, right: 0, height: 3, background: "rgba(255,255,255,0.08)", zIndex: 3 },
+  progressFill: { height: "100%", width: "0%", background: `linear-gradient(90deg, ${C.blue400}, ${C.blue600})` },
+
+  /* trust bar */
+  trustBar: { borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)", background: C.bgAlt, overflow: "hidden", padding: "16px 0" },
+  trustTrack: { display: "flex", gap: 48, width: "max-content", whiteSpace: "nowrap" },
+  trustItem: { fontSize: 14, color: C.textDim, fontWeight: 500, display: "flex", alignItems: "center" },
+
+  /* shared section bits */
+  sectionPad: { padding: "96px 24px", maxWidth: 1240, margin: "0 auto" },
+  label: { display: "inline-block", fontSize: 13, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.blue400, marginBottom: 14 },
+  title: { fontSize: "clamp(1.9rem, 3.6vw, 2.7rem)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.02em", margin: "0 0 16px", color: "#fff" },
+  italic: { fontStyle: "italic", color: C.blue300 },
+  sub: { fontSize: 16.5, lineHeight: 1.65, color: C.textDim, maxWidth: 480, margin: 0 },
+
+  /* services */
+  servicesHeader: { display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 24, marginBottom: 56 },
+  servicesGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 22 },
+  scard: { background: C.card, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "30px 26px", transition: "transform .3s ease, border-color .3s ease, box-shadow .3s ease", cursor: "default" },
+  scardIcon: { fontSize: 30, marginBottom: 16 },
+  scardTitle: { fontSize: 19, fontWeight: 700, margin: "0 0 10px", color: "#fff" },
+  scardDesc: { fontSize: 14.5, lineHeight: 1.6, color: C.textDim, margin: "0 0 20px" },
+  scardTags: { display: "flex", gap: 8, flexWrap: "wrap" },
+  scardTag: { fontSize: 12, fontWeight: 600, padding: "5px 11px", borderRadius: 20, background: "rgba(168,85,247,0.12)", color: C.blue300, border: "1px solid rgba(168,85,247,0.3)" },
+
+  /* how we work */
+  howWrap: { display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 64, alignItems: "start" },
+  step: { display: "flex", gap: 18, padding: "20px", borderRadius: 14, border: "1px solid", marginBottom: 12, cursor: "pointer", transition: "all .25s ease" },
+  stepN: { fontSize: 22, fontWeight: 800, minWidth: 38, transition: "color .25s ease" },
+  stepTitle: { fontSize: 16.5, fontWeight: 700, margin: "0 0 6px", color: "#fff" },
+  stepDesc: { fontSize: 14, lineHeight: 1.6, color: C.textDim, margin: 0 },
+  howVisual: { background: C.card, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: 28, position: "sticky", top: 110 },
+  howVisualLabel: { fontSize: 12.5, fontWeight: 600, color: C.textFaint, marginBottom: 22, textTransform: "uppercase", letterSpacing: "0.05em" },
+  tlItem: { display: "flex", gap: 14, alignItems: "flex-start", marginBottom: 4 },
+  tlDotWrap: { display: "flex", flexDirection: "column", alignItems: "center" },
+  tlDot: { width: 30, height: 30, borderRadius: "50%", border: "2px solid", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, flexShrink: 0 },
+  tlLine: { width: 2, flex: 1, minHeight: 28, background: "rgba(255,255,255,0.12)", margin: "4px 0" },
+  tlTitle: { fontSize: 14.5, fontWeight: 700, margin: "2px 0 4px", color: "#fff" },
+  tlMeta: { fontSize: 12.5, color: C.textFaint, margin: "0 0 18px" },
+  tlBadge: { fontSize: 11, fontWeight: 700, padding: "4px 10px", borderRadius: 20, border: "1px solid", height: "fit-content", whiteSpace: "nowrap" },
+
+  /* about */
+  aboutWrap: { display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 64, alignItems: "start" },
+  pillar: { display: "flex", gap: 16, marginBottom: 22 },
+  pillarIcon: { fontSize: 22, width: 46, height: 46, borderRadius: 12, background: "rgba(168,85,247,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 },
+  pillarTitle: { fontSize: 16, fontWeight: 700, margin: "0 0 4px", color: "#fff" },
+  pillarDesc: { fontSize: 14, lineHeight: 1.6, color: C.textDim, margin: 0 },
+  aboutCard: { background: C.card, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: 32 },
+  numGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 28 },
+  numBlock: { textAlign: "left" },
+  numVal: { fontSize: 34, fontWeight: 800, color: C.blue300, fontVariantNumeric: "tabular-nums" },
+  numLabel: { fontSize: 13, color: C.textFaint, marginTop: 4 },
+  aboutQuote: { fontSize: 17, fontStyle: "italic", lineHeight: 1.6, color: C.text, borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24 },
+
+  /* testimonials */
+  tgrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 22, marginBottom: 28 },
+  tcard: { background: C.card, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: 28, transition: "transform .35s ease, border-color .35s ease" },
+  tcardStars: { color: "#fbbf24", marginBottom: 14, fontSize: 15 },
+  tcardText: { fontSize: 14.5, lineHeight: 1.65, color: C.textDim, margin: "0 0 22px" },
+  tcardAuthor: { display: "flex", alignItems: "center", gap: 12 },
+  tcardAv: { width: 40, height: 40, borderRadius: "50%", background: `linear-gradient(135deg, ${C.blue500}, ${C.blue600})`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 13, color: "#fff" },
+  tcardName: { fontSize: 14, fontWeight: 700, color: "#fff" },
+  tcardRole: { fontSize: 12.5, color: C.textFaint },
+  tDots: { display: "flex", justifyContent: "center", gap: 8 },
+  tDot: { width: 8, height: 8, borderRadius: "50%", border: "none", cursor: "pointer" },
+
+  /* contact */
+  contactWrap: { display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 56, alignItems: "start" },
+  cinfo: { display: "flex", gap: 16, marginBottom: 18 },
+  cinfoIcon: { fontSize: 20, width: 44, height: 44, borderRadius: 12, background: "rgba(168,85,247,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 },
+  cinfoLabel: { fontSize: 12, color: C.textFaint, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em" },
+  cinfoText: { fontSize: 14.5, color: C.text, margin: "4px 0 0" },
+  contactForm: { background: C.card, border: "1px solid rgba(255,255,255,0.08)", borderRadius: 18, padding: 32 },
+  formTitle: { fontSize: 19, fontWeight: 700, color: "#fff" },
+  formSub: { fontSize: 13, color: C.textFaint, marginBottom: 22 },
+  formRow: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 },
+  fgroup: { marginBottom: 16, display: "flex", flexDirection: "column", gap: 6 },
+  flabel: { fontSize: 12.5, fontWeight: 600, color: C.textDim },
+  input: (hasError) => ({
+    width: "100%",
+    padding: "11px 14px",
+    borderRadius: 9,
+    border: `1px solid ${hasError ? "#f87171" : "rgba(255,255,255,0.12)"}`,
+    background: "rgba(255,255,255,0.03)",
+    color: C.text,
+    fontSize: 14.5,
+    fontFamily: "inherit",
+  }),
+  ferror: { fontSize: 12, color: "#f87171" },
+  formBtn: { width: "100%", padding: "13px", borderRadius: 10, border: "none", background: C.blue500, color: "#fff", fontWeight: 700, fontSize: 15, cursor: "pointer", marginTop: 6, boxShadow: "0 10px 30px rgba(124,58,237,0.3)" },
+  toast: { marginTop: 14, padding: "12px 16px", borderRadius: 10, background: "rgba(52,211,153,0.12)", border: "1px solid rgba(52,211,153,0.35)", color: "#6ee7b7", fontSize: 13.5 },
+
+  /* cta band */
+  ctaBand: { background: `linear-gradient(135deg, ${C.blue600}, #5b21b6)`, padding: "80px 24px", textAlign: "center" },
+  ctaHeading: { fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 800, color: "#fff", margin: "0 0 16px", lineHeight: 1.15 },
+  ctaText: { fontSize: 16, color: "rgba(255,255,255,0.85)", maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.6 },
+  ctaBtns: { display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" },
+
+  /* footer */
+  footer: { background: "#05070d", padding: "64px 24px 24px" },
+  footerTop: { maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr 1fr", gap: 40, paddingBottom: 40, borderBottom: "1px solid rgba(255,255,255,0.06)" },
+  footerBrand: { maxWidth: 320 },
+  footerDesc: { fontSize: 13.5, color: C.textFaint, lineHeight: 1.6, marginTop: 14 },
+  footerCol: {},
+  footerH4: { fontSize: 14, fontWeight: 700, color: "#fff", marginBottom: 16 },
+  footerUl: { listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 11 },
+  footerA: { color: C.textFaint, textDecoration: "none", fontSize: 13.5 },
+  footerBottom: { maxWidth: 1240, margin: "0 auto", display: "flex", justifyContent: "space-between", paddingTop: 24, fontSize: 12.5, color: C.textFaint, flexWrap: "wrap", gap: 10 },
+};
