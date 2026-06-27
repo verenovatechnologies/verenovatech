@@ -66,7 +66,7 @@ export default function Contact() {
               <div style={st.cinfoIcon}>📍</div>
               <div>
                 <label style={st.cinfoLabel}>Location</label>
-                <p style={st.cinfoText}>14 B Thirumoorthy Nagar 1st Street, Nungambakkam, Chennai-34</p>
+                <p style={st.cinfoText}>29  palaniyappa Nagar 3rd Street, Nanjikottai road, thanjavur-613001</p>
               </div>
             </div>
             <div style={st.cinfo}>
@@ -80,7 +80,8 @@ export default function Contact() {
               <div style={st.cinfoIcon}>📞</div>
               <div>
                 <label style={st.cinfoLabel}>Phone / WhatsApp</label>
-                <p style={st.cinfoText}>+91 7708767738</p>
+                <p style={st.cinfoText}>+91 8610295217</p>
+                 <p style={st.cinfoText}>+91 9361647718</p>
               </div>
             </div>
           </div>
