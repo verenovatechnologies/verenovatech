@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 import { st } from "../styles/styles.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
-// 🔑 Replace these with your EmailJS details
 const SERVICE_ID  = "service_wyqr88h";
 const TEMPLATE_ID = "template_5jf162f";
 const PUBLIC_KEY  = "zRPjEbI7aUlM1BnME";
@@ -23,7 +22,7 @@ export default function Contact() {
     fname: "", lname: "", email: "",
     phone: "", type: "", brief: "",
   });
-  const [errors, setErrors]     = useState({});
+  const [errors, setErrors]       = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending]     = useState(false);
   const [sendError, setSendError] = useState("");
@@ -55,12 +54,15 @@ export default function Contact() {
         SERVICE_ID,
         TEMPLATE_ID,
         {
-          fname: form.fname,
-          lname: form.lname,
-          email: form.email,
-          phone: form.phone || "Not provided",
-          type:  form.type,
-          brief: form.brief || "Not provided",
+          fname:   form.fname,
+          lname:   form.lname,
+          name:    form.fname + " " + form.lname,
+          email:   form.email,
+          phone:   form.phone || "Not provided",
+          type:    form.type,
+          brief:   form.brief || "Not provided",
+          message: form.brief || "Not provided",
+          title:   form.type,
         },
         PUBLIC_KEY
       );
