@@ -4,7 +4,7 @@ import { st } from "../styles/styles.js";
 import { Reveal } from "../hooks/useReveal.jsx";
 
 const SERVICE_ID  = "service_wyqr88h";
-const TEMPLATE_ID = "template_5jf162f";
+const TEMPLATE_ID = "template_caq09yp";
 const PUBLIC_KEY  = "zRPjEbI7aUlM1BnME";
 
 function FormField({ label, error, children }) {
